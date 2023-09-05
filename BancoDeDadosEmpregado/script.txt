@@ -1,0 +1,21 @@
+drop table java_departamento; commit;
+drop table java_empregado; commit;
+
+create table java_departamento (
+    id integer,
+    nome varchar2(50),
+    primary key(id)
+);
+
+commit;
+
+create table java_empregado (
+    id integer,
+    nome varchar2(50),
+    salario number(12, 2),
+    id_departamento integer,
+    primary key(id),
+    foreign key(id_departamento) REFERENCES java_departamento(id)
+);
+
+commit;
